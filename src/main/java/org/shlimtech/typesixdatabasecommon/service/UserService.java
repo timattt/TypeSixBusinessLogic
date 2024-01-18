@@ -3,12 +3,11 @@ package org.shlimtech.typesixdatabasecommon.service;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.shlimtech.typesixdatabasecommon.dto.UserDTO;
+import org.shlimtech.typesixdatabasecommon.metadata.Metadata;
 import org.shlimtech.typesixdatabasecommon.model.User;
 import org.shlimtech.typesixdatabasecommon.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -52,15 +51,14 @@ public class UserService {
     }
 
     @Transactional
-    public UserDTO getRandomUser() {
-        List<User> users = userRepository.findAll();
-        UserDTO userDTO = null;
+    public void setMetadata(int userId, Metadata metadata) {
+        User user = userRepository.getReferenceById(userId);
+        user.setMetadata(metadata);
+    }
 
-        if (!users.isEmpty()) {
-            userDTO = modelMapper.map(users.get((int) (users.size() * Math.random())), UserDTO.class);
-        }
-
-        return userDTO;
+    @Transactional
+    public Metadata getMetadata(int userId) {
+        return userRepository.getReferenceById(userId).getMetadata();
     }
 
 }
