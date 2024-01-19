@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class UserService {
 
-    private final UserRepository userRepository;
-    private final ModelMapper modelMapper;
+    protected final UserRepository userRepository;
+    protected final ModelMapper modelMapper;
 
     private void complement(User user, UserDTO userDTO) {
         if (userDTO.getGithubLink() != null) {
@@ -27,7 +27,7 @@ public class UserService {
         // TODO more fields to complement
     }
 
-    public void createOrComplementUser(UserDTO userDTO) {
+    public UserDTO createOrComplementUser(UserDTO userDTO) {
         User user = userRepository.findByEmail(userDTO.getEmail());
 
         if (user == null) {
@@ -36,6 +36,8 @@ public class UserService {
 
         complement(user, userDTO);
         userRepository.save(user);
+
+        return modelMapper.map(user, UserDTO.class);
     }
 
     @Transactional
