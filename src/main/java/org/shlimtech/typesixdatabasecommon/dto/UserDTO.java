@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.shlimtech.typesixdatabasecommon.metadata.Metadata;
 
 @Data
 @AllArgsConstructor
@@ -21,5 +20,4 @@ public class UserDTO {
     private String phone;
     private String vkLink;
     private String githubLink;
-    private Metadata metadata;
 }

@@ -2,9 +2,6 @@ package org.shlimtech.typesixdatabasecommon.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
-import org.shlimtech.typesixdatabasecommon.metadata.Metadata;
 
 @Entity
 @Data
@@ -42,9 +39,5 @@ public class User {
 
     @Column(name = "github_link")
     private String githubLink;
-
-    @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "metadata")
-    private Metadata metadata;
 
 }

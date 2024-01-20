@@ -3,7 +3,6 @@ package org.shlimtech.typesixdatabasecommon.service;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.shlimtech.typesixdatabasecommon.dto.UserDTO;
-import org.shlimtech.typesixdatabasecommon.metadata.Metadata;
 import org.shlimtech.typesixdatabasecommon.model.User;
 import org.shlimtech.typesixdatabasecommon.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -50,17 +49,6 @@ public class UserService {
     public UserDTO loadUser(int id) {
         User user = userRepository.getReferenceById(id);
         return modelMapper.map(user, UserDTO.class);
-    }
-
-    @Transactional
-    public void setMetadata(int userId, Metadata metadata) {
-        User user = userRepository.getReferenceById(userId);
-        user.setMetadata(metadata);
-    }
-
-    @Transactional
-    public Metadata getMetadata(int userId) {
-        return userRepository.getReferenceById(userId).getMetadata();
     }
 
 }
