@@ -18,7 +18,6 @@ import org.springframework.test.context.TestPropertySource;
         "spring.datasource.username=sa",
         "spring.datasource.password=sa",
         "spring.profiles.active=debug",
-        "type-6.client-cors-allowed-origin=https://google.com",
         "spring.security.oauth2.resourceserver.jwt.jwk-set-uri=https://google.com"
 })
 @RequiredArgsConstructor
