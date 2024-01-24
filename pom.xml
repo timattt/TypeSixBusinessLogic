@@ -8,7 +8,7 @@
         <version>3.2.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>org.shlimtech.common</groupId>
+    <groupId>org.shlimtech.type6common</groupId>
     <artifactId>TypeSixDataBaseCommon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>TypeSixDataBaseCommon</name>
