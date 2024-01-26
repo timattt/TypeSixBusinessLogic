@@ -18,4 +18,10 @@ public class UsersServiceTests extends BaseTest {
         Assert.isTrue(userService.loadUser("ggg@gmail.com") != null, "must contains user");
     }
 
+    @Test
+    public void complementTest() {
+        UserDTO dto = userService.createOrComplementUser(UserDTO.builder().email("hhh@gmail.com").firstName("hhh").build());
+        Assert.isTrue(userService.createOrComplementUser(UserDTO.builder().email("hhh@gmail.com").firstName("hhh").build()).getId() == dto.getId(), "complementation test error");
+    }
+
 }
