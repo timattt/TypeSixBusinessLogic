@@ -58,4 +58,9 @@ public class UserService {
         return userRepository.findAll().stream().map(user -> modelMapper.map(user, UserDTO.class)).collect(Collectors.toList());
     }
 
+    @Transactional
+    public void setBio(int id, String bio) {
+        userRepository.getReferenceById(id).setBiography(bio);
+    }
+
 }
