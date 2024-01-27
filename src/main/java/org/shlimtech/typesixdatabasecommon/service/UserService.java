@@ -29,6 +29,11 @@ public class UserService {
         // TODO more fields to complement
     }
 
+    @Transactional
+    public boolean containsUser(String email) {
+        return userRepository.findByEmail(email) != null;
+    }
+
     public UserDTO createOrComplementUser(UserDTO userDTO) {
         User user = userRepository.findByEmail(userDTO.getEmail());
 
