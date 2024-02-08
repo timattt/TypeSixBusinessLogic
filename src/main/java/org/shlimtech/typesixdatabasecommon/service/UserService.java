@@ -34,6 +34,7 @@ public class UserService {
         return userRepository.findByEmail(email) != null;
     }
 
+    @Transactional
     public UserDTO createOrComplementUser(UserDTO userDTO) {
         User user = userRepository.findByEmail(userDTO.getEmail());
 
