@@ -9,11 +9,11 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.shlimtech.type-6.businessLogicLayer</groupId>
-    <artifactId>TypeSixBusinessLogicLayer</artifactId>
+    <groupId>org.shlimtech.type-6.businessLogic</groupId>
+    <artifactId>TypeSixBusinessLogic</artifactId>
     <version>${revision}</version>
 
-    <name>TypeSixBusinessLogicLayer</name>
+    <name>TypeSixBusinessLogic</name>
     <description>Business logic layer for type-6</description>
 
     <properties>
