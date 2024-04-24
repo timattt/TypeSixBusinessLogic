@@ -1,11 +1,17 @@
-package org.shlimtech.typesixdatabasecommon.model;
+package org.shlimtech.typesixdatabasecommon.domain.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Table(name = "type6user")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Column(name = "id")
@@ -40,4 +46,13 @@ public class User {
     @Column(name = "github_link")
     private String githubLink;
 
+    @Column(name = "code")
+    private String code;
+
+    @Column(name = "status")
+    @Enumerated(EnumType.ORDINAL)
+    private UserStatus status;
+
+    @Column(name = "password")
+    private String password;
 }
