@@ -9,12 +9,12 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.shlimtech.type-6.common</groupId>
-    <artifactId>TypeSixDataBaseCommon</artifactId>
+    <groupId>org.shlimtech.type-6.businessLogicLayer</groupId>
+    <artifactId>TypeSixBusinessLogicLayer</artifactId>
     <version>${revision}</version>
 
-    <name>TypeSixDataBaseCommon</name>
-    <description>Common database classes</description>
+    <name>TypeSixBusinessLogicLayer</name>
+    <description>Business logic layer for type-6</description>
 
     <properties>
         <revision>0.1</revision>
