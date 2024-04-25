@@ -9,12 +9,12 @@ import java.util.Random;
 public class RandomStringsGeneratorServiceImpl implements RandomStringsGeneratorService {
     @Override
     public String generateCode() {
-        return generateRandomString(3);
+        return generateRandomString(REGISTRATION_CODE_LENGTH);
     }
 
     @Override
     public String generatePassword() {
-        return generateRandomString(10);
+        return generateRandomString(RANDOM_PASSWORD_LENGTH);
     }
 
     private String generateRandomString(int length) {
