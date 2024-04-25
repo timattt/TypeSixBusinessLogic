@@ -10,6 +10,6 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 @ComponentScan(basePackages = {"org.shlimtech.typesixbusinesslogic"})
 @EnableJpaRepositories(basePackages = "org.shlimtech.typesixbusinesslogic")
-@EntityScan(basePackages = "org.shlimtech.typesixdatabasecommon")
-public @interface TypeSixDatabaseCommon {
+@EntityScan(basePackages = "org.shlimtech.typesixbusinesslogic")
+public @interface TypeSixBusinessLogic {
 }
