@@ -26,7 +26,6 @@ public class RegistrationServiceTests {
 
     private static final String RANDOM_CODE = "abc";
     private static final String DIFFERENT_CODE = "abc1";
-    private static final String RANDOM_PASSWORD = "cde";
     private static final String TEST_EMAIL = "a@gmail.com";
     private static final String TEST_PASSWORD = "password";
 
@@ -51,7 +50,6 @@ public class RegistrationServiceTests {
     @BeforeEach
     public void setupMocks() {
         when(randomStringsGeneratorService.generateCode()).thenReturn(RANDOM_CODE);
-        when(randomStringsGeneratorService.generatePassword()).thenReturn(RANDOM_PASSWORD);
 
         codeReceived = false;
     }

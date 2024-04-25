@@ -55,6 +55,11 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         User user = userRepository.findByEmail(email);
 
         if (user != null) {
+            if (user.getStatus() != UserStatus.active) {
+                user.setStatus(UserStatus.active);
+                user.setCode(null);
+                userRepository.save(user);
+            }
             return false;
         }
 
@@ -74,6 +79,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         analyzeGithub(user, attributes);
         analyzeVK(user, attributes);
         analyzeYandex(user, attributes);
+
+        userRepository.save(user);
     }
 
     private <T> void process(String key, Consumer<T> cons, Map<String, Object> attributes) {

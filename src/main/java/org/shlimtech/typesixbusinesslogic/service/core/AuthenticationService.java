@@ -12,8 +12,9 @@ public interface AuthenticationService {
      *
      * @param email          Email of user for which token is customized. Not null.
      * @param claimsConsumer Consumer used to customize token. Send KV items here. Not null.
+     * @throws AuthenticationException If loadUser method fails.
      */
-    void customizeToken(String email, BiConsumer<String, String> claimsConsumer);
+    void customizeToken(String email, BiConsumer<String, String> claimsConsumer) throws AuthenticationException;
 
     /**
      * Loads user from database.
@@ -26,6 +27,7 @@ public interface AuthenticationService {
 
     /**
      * Checks user with such email in the database. If it is not presented, then it will be created.
+     * If user is presented and is currently pending, it will make it active and remove code.
      *
      * @param email Email to identify user. Not null.
      * @return True if user was created in the database, False if user already was in the database.
