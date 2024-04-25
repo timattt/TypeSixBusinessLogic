@@ -33,12 +33,17 @@ public class RegistrationServiceImpl implements RegistrationService {
         if ((user = userRepository.findByEmail(email)) != null && user.getStatus() != UserStatus.pending) {
             throw new RegistrationException("Active user with this email already exists");
         }
+        if (user == null) {
+            user = User.builder().email(email).status(UserStatus.pending).build();
+        }
 
         String code = randomStringsGeneratorService.generateCode();
 
         codeSender.accept(code, email);
+        
+        user.setCode(code);
 
-        userRepository.save(User.builder().email(email).code(code).status(UserStatus.pending).build());
+        userRepository.save(user);
     }
 
     @Override
