@@ -1,4 +1,4 @@
-package org.shlimtech.typesixdatabasecommon.service.core;
+package org.shlimtech.typesixbusinesslogic.service.core;
 
 public interface RandomStringsGeneratorService {
     String generateCode();

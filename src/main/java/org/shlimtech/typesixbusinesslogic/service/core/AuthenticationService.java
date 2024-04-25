@@ -1,6 +1,6 @@
-package org.shlimtech.typesixdatabasecommon.service.core;
+package org.shlimtech.typesixbusinesslogic.service.core;
 
-import org.shlimtech.typesixdatabasecommon.domain.model.User;
+import org.shlimtech.typesixbusinesslogic.domain.model.User;
 
 import java.util.Map;
 import java.util.function.BiConsumer;

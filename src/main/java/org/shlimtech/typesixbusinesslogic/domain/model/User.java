@@ -1,4 +1,4 @@
-package org.shlimtech.typesixdatabasecommon.domain.model;
+package org.shlimtech.typesixbusinesslogic.domain.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

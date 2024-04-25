@@ -1,13 +1,13 @@
-package org.shlimtech.typesixdatabasecommon.service.impl;
+package org.shlimtech.typesixbusinesslogic.service.impl;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.shlimtech.typesixdatabasecommon.domain.model.User;
-import org.shlimtech.typesixdatabasecommon.domain.model.UserStatus;
-import org.shlimtech.typesixdatabasecommon.service.core.RandomStringsGeneratorService;
-import org.shlimtech.typesixdatabasecommon.service.core.RegistrationException;
-import org.shlimtech.typesixdatabasecommon.service.core.RegistrationService;
-import org.shlimtech.typesixdatabasecommon.service.impl.repository.UserRepository;
+import org.shlimtech.typesixbusinesslogic.domain.model.User;
+import org.shlimtech.typesixbusinesslogic.domain.model.UserStatus;
+import org.shlimtech.typesixbusinesslogic.service.core.RandomStringsGeneratorService;
+import org.shlimtech.typesixbusinesslogic.service.core.RegistrationException;
+import org.shlimtech.typesixbusinesslogic.service.core.RegistrationService;
+import org.shlimtech.typesixbusinesslogic.service.impl.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 

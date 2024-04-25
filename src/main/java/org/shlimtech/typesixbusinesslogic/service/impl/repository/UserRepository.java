@@ -1,6 +1,6 @@
-package org.shlimtech.typesixdatabasecommon.service.impl.repository;
+package org.shlimtech.typesixbusinesslogic.service.impl.repository;
 
-import org.shlimtech.typesixdatabasecommon.domain.model.User;
+import org.shlimtech.typesixbusinesslogic.domain.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

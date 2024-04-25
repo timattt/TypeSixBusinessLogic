@@ -1,4 +1,4 @@
-package org.shlimtech.typesixdatabasecommon.service.core;
+package org.shlimtech.typesixbusinesslogic.service.core;
 
 public class RegistrationException extends RuntimeException {
     public RegistrationException(String message) {
