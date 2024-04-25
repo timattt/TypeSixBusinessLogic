@@ -9,6 +9,7 @@ import org.shlimtech.typesixdatabasecommon.service.core.AuthenticationService;
 import org.shlimtech.typesixdatabasecommon.service.core.RandomStringsGeneratorService;
 import org.shlimtech.typesixdatabasecommon.service.impl.repository.UserRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -24,6 +25,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     @Transactional
     public void customizeToken(String email, BiConsumer<String, String> claimsConsumer) {
+        Assert.notNull(email, "email must not be null");
+        Assert.notNull(claimsConsumer, "claimsConsumer must not be null");
+
         User user = loadUser(email);
         claimsConsumer.accept("email", user.getEmail());
         claimsConsumer.accept("id", Integer.toString(user.getId()));
@@ -32,6 +36,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     @Transactional
     public User loadUser(String email) {
+        Assert.notNull(email, "email must not be null");
+
         User user = userRepository.findByEmail(email);
 
         if (user == null) {
@@ -44,6 +50,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     @Transactional
     public boolean ensureActiveUserExists(String email) {
+        Assert.notNull(email, "email must not be null");
+
         User user = userRepository.findByEmail(email);
 
         if (user != null) {
@@ -58,6 +66,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     @Transactional
     public void complementUserByOauth2ProviderData(String email, Map<String, Object> attributes) {
+        Assert.notNull(email, "email must not be null");
+        Assert.notNull(attributes, "attributes must not be null");
+
         User user = loadUser(email);
 
         analyzeGithub(user, attributes);
