@@ -11,7 +11,7 @@ import org.shlimtech.typesixbusinesslogic.service.impl.repository.UserRepository
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
-import java.util.function.Consumer;
+import java.util.function.BiConsumer;
 
 @Service
 @RequiredArgsConstructor
@@ -19,19 +19,23 @@ public class RegistrationServiceImpl implements RegistrationService {
 
     private final RandomStringsGeneratorService randomStringsGeneratorService;
     private final UserRepository userRepository;
-    private Consumer<String> codeSender;
+    private BiConsumer<String, String> codeSender;
 
     @Override
     @Transactional
     public void beginRegistrationFlow(String email) {
-        Assert.notNull(codeSender, "code sender must be not null");
+        Assert.notNull(email, "email must be not null");
+
+        if (codeSender == null) {
+            throw new RegistrationException("code sender must be not null");
+        }
         if (userRepository.findByEmail(email) != null) {
             throw new RegistrationException("User with this email already exists");
         }
 
         String code = randomStringsGeneratorService.generateCode();
 
-        codeSender.accept(code);
+        codeSender.accept(code, email);
 
         userRepository.save(User.builder().email(email).code(code).status(UserStatus.pending).build());
     }
@@ -39,6 +43,9 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Override
     @Transactional
     public void checkValidCode(String email, String code) {
+        Assert.notNull(email, "email must be not null");
+        Assert.notNull(code, "code must be not null");
+
         User user = userRepository.findByEmail(email);
 
         if (user == null) {
@@ -58,6 +65,10 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Override
     @Transactional
     public void endRegistrationFlow(String email, String code, String password) {
+        Assert.notNull(email, "email must be not null");
+        Assert.notNull(code, "code must be not null");
+        Assert.notNull(password, "password must be not null");
+
         checkValidCode(email, code);
         User user = userRepository.findByEmail(email);
 
@@ -67,7 +78,8 @@ public class RegistrationServiceImpl implements RegistrationService {
     }
 
     @Override
-    public void setCodeSender(Consumer<String> codeConsumer) {
+    public void setCodeSender(BiConsumer<String, String> codeConsumer) {
+        Assert.notNull(codeConsumer, "codeConsumer must be not null");
         this.codeSender = codeConsumer;
     }
 }
