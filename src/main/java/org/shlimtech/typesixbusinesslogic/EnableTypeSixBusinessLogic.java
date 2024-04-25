@@ -11,5 +11,5 @@ import java.lang.annotation.RetentionPolicy;
 @ComponentScan(basePackages = {"org.shlimtech.typesixbusinesslogic"})
 @EnableJpaRepositories(basePackages = "org.shlimtech.typesixbusinesslogic")
 @EntityScan(basePackages = "org.shlimtech.typesixbusinesslogic")
-public @interface TypeSixBusinessLogic {
+public @interface EnableTypeSixBusinessLogic {
 }
