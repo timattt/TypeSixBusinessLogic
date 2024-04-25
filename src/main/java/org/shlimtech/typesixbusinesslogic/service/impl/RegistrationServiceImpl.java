@@ -29,8 +29,9 @@ public class RegistrationServiceImpl implements RegistrationService {
         if (codeSender == null) {
             throw new RegistrationException("code sender must be not null");
         }
-        if (userRepository.findByEmail(email) != null) {
-            throw new RegistrationException("User with this email already exists");
+        User user;
+        if ((user = userRepository.findByEmail(email)) != null && user.getStatus() != UserStatus.pending) {
+            throw new RegistrationException("Active user with this email already exists");
         }
 
         String code = randomStringsGeneratorService.generateCode();
@@ -75,6 +76,8 @@ public class RegistrationServiceImpl implements RegistrationService {
         user.setStatus(UserStatus.active);
         user.setCode(null);
         user.setPassword(password);
+
+        userRepository.save(user);
     }
 
     @Override

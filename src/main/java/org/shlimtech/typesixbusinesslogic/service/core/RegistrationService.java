@@ -13,7 +13,7 @@ public interface RegistrationService {
      * Finally, creates new user into database with this code, given email and pending status code.
      *
      * @param email Email to create new user. Not null.
-     * @throws RegistrationException If code sender is null, or if user with this email already exists.
+     * @throws RegistrationException If code sender is null, or if ACTIVE user with this email already exists.
      */
     void beginRegistrationFlow(String email) throws RegistrationException;
 
