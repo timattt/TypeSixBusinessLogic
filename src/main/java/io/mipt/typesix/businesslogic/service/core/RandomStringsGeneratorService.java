@@ -1,4 +1,4 @@
-package org.shlimtech.typesixbusinesslogic.service.core;
+package io.mipt.typesix.businesslogic.service.core;
 
 public interface RandomStringsGeneratorService {
     int REGISTRATION_CODE_LENGTH = 10;

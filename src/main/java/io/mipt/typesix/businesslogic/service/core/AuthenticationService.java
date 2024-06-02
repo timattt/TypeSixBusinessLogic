@@ -1,6 +1,6 @@
-package org.shlimtech.typesixbusinesslogic.service.core;
+package io.mipt.typesix.businesslogic.service.core;
 
-import org.shlimtech.typesixbusinesslogic.domain.model.User;
+import io.mipt.typesix.businesslogic.domain.model.User;
 
 import java.util.Map;
 import java.util.function.BiConsumer;

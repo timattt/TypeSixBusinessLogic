@@ -1,14 +1,14 @@
-package org.shlimtech.typesixbusinesslogic.service;
+package io.mipt.typesix.businesslogic.service;
 
+import io.mipt.typesix.businesslogic.service.impl.RandomStringsGeneratorServiceImpl;
+import io.mipt.typesix.businesslogic.service.core.RandomStringsGeneratorService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.shlimtech.typesixbusinesslogic.service.core.RandomStringsGeneratorService;
-import org.shlimtech.typesixbusinesslogic.service.impl.RandomStringsGeneratorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.shlimtech.typesixbusinesslogic.service.core.RandomStringsGeneratorService.RANDOM_PASSWORD_LENGTH;
-import static org.shlimtech.typesixbusinesslogic.service.core.RandomStringsGeneratorService.REGISTRATION_CODE_LENGTH;
+import static io.mipt.typesix.businesslogic.service.core.RandomStringsGeneratorService.RANDOM_PASSWORD_LENGTH;
+import static io.mipt.typesix.businesslogic.service.core.RandomStringsGeneratorService.REGISTRATION_CODE_LENGTH;
 
 @SpringBootTest(classes = {RandomStringsGeneratorService.class, RandomStringsGeneratorServiceImpl.class})
 public class RandomStringsGeneratorServiceTests {

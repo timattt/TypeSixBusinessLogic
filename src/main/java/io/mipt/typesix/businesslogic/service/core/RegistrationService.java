@@ -1,4 +1,4 @@
-package org.shlimtech.typesixbusinesslogic.service.core;
+package io.mipt.typesix.businesslogic.service.core;
 
 import java.util.function.BiConsumer;
 

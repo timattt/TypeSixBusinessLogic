@@ -1,13 +1,13 @@
-package org.shlimtech.typesixbusinesslogic.service.impl;
+package io.mipt.typesix.businesslogic.service.impl;
 
+import io.mipt.typesix.businesslogic.domain.model.User;
+import io.mipt.typesix.businesslogic.domain.model.UserStatus;
+import io.mipt.typesix.businesslogic.service.impl.repository.UserRepository;
+import io.mipt.typesix.businesslogic.service.core.RandomStringsGeneratorService;
+import io.mipt.typesix.businesslogic.service.core.RegistrationException;
+import io.mipt.typesix.businesslogic.service.core.RegistrationService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.shlimtech.typesixbusinesslogic.domain.model.User;
-import org.shlimtech.typesixbusinesslogic.domain.model.UserStatus;
-import org.shlimtech.typesixbusinesslogic.service.core.RandomStringsGeneratorService;
-import org.shlimtech.typesixbusinesslogic.service.core.RegistrationException;
-import org.shlimtech.typesixbusinesslogic.service.core.RegistrationService;
-import org.shlimtech.typesixbusinesslogic.service.impl.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -40,7 +40,7 @@ public class RegistrationServiceImpl implements RegistrationService {
         String code = randomStringsGeneratorService.generateCode();
 
         codeSender.accept(code, email);
-        
+
         user.setCode(code);
 
         userRepository.save(user);

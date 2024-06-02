@@ -1,6 +1,6 @@
-package org.shlimtech.typesixbusinesslogic.service.impl;
+package io.mipt.typesix.businesslogic.service.impl;
 
-import org.shlimtech.typesixbusinesslogic.service.core.RandomStringsGeneratorService;
+import io.mipt.typesix.businesslogic.service.core.RandomStringsGeneratorService;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;

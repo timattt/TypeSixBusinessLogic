@@ -1,15 +1,16 @@
-package org.shlimtech.typesixbusinesslogic.service;
+package io.mipt.typesix.businesslogic.service;
 
+import io.mipt.typesix.businesslogic.domain.model.User;
+import io.mipt.typesix.businesslogic.domain.model.UserStatus;
+import io.mipt.typesix.businesslogic.service.core.RandomStringsGeneratorService;
+import io.mipt.typesix.businesslogic.service.impl.RegistrationServiceImpl;
+import io.mipt.typesix.businesslogic.service.impl.repository.UserRepository;
+import io.mipt.typesix.businesslogic.service.core.RegistrationException;
+import io.mipt.typesix.businesslogic.service.core.RegistrationService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.shlimtech.typesixbusinesslogic.domain.model.User;
-import org.shlimtech.typesixbusinesslogic.domain.model.UserStatus;
-import org.shlimtech.typesixbusinesslogic.service.core.RandomStringsGeneratorService;
-import org.shlimtech.typesixbusinesslogic.service.core.RegistrationException;
-import org.shlimtech.typesixbusinesslogic.service.core.RegistrationService;
-import org.shlimtech.typesixbusinesslogic.service.impl.RegistrationServiceImpl;
-import org.shlimtech.typesixbusinesslogic.service.impl.repository.UserRepository;
+import org.mockito.ArgumentMatchers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -67,7 +68,7 @@ public class RegistrationServiceTests {
         registrationService.beginRegistrationFlow(TEST_EMAIL);
 
         Assertions.assertTrue(codeReceived);
-        verify(userRepository).save(eq(User.builder().email(TEST_EMAIL).code(RANDOM_CODE).status(UserStatus.pending).build()));
+        verify(userRepository).save(ArgumentMatchers.eq(User.builder().email(TEST_EMAIL).code(RANDOM_CODE).status(UserStatus.pending).build()));
     }
 
     @Test

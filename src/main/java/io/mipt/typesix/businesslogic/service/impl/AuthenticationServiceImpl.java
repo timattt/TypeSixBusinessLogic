@@ -1,13 +1,13 @@
-package org.shlimtech.typesixbusinesslogic.service.impl;
+package io.mipt.typesix.businesslogic.service.impl;
 
+import io.mipt.typesix.businesslogic.domain.model.User;
+import io.mipt.typesix.businesslogic.domain.model.UserStatus;
+import io.mipt.typesix.businesslogic.service.impl.repository.UserRepository;
+import io.mipt.typesix.businesslogic.service.core.AuthenticationException;
+import io.mipt.typesix.businesslogic.service.core.AuthenticationService;
+import io.mipt.typesix.businesslogic.service.core.RandomStringsGeneratorService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.shlimtech.typesixbusinesslogic.domain.model.User;
-import org.shlimtech.typesixbusinesslogic.domain.model.UserStatus;
-import org.shlimtech.typesixbusinesslogic.service.core.AuthenticationException;
-import org.shlimtech.typesixbusinesslogic.service.core.AuthenticationService;
-import org.shlimtech.typesixbusinesslogic.service.core.RandomStringsGeneratorService;
-import org.shlimtech.typesixbusinesslogic.service.impl.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 

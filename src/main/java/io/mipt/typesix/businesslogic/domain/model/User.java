@@ -1,4 +1,4 @@
-package org.shlimtech.typesixbusinesslogic.domain.model;
+package io.mipt.typesix.businesslogic.domain.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

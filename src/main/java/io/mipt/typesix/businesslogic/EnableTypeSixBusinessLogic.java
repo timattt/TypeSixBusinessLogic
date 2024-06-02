@@ -1,4 +1,4 @@
-package org.shlimtech.typesixbusinesslogic;
+package io.mipt.typesix.businesslogic;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
@@ -8,8 +8,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
-@ComponentScan(basePackages = {"org.shlimtech.typesixbusinesslogic"})
-@EnableJpaRepositories(basePackages = "org.shlimtech.typesixbusinesslogic")
-@EntityScan(basePackages = "org.shlimtech.typesixbusinesslogic")
+@ComponentScan(basePackages = {"io.mipt"})
+@EnableJpaRepositories(basePackages = "io.mipt")
+@EntityScan(basePackages = "io.mipt")
 public @interface EnableTypeSixBusinessLogic {
 }

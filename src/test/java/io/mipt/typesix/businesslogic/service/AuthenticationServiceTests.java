@@ -1,15 +1,15 @@
-package org.shlimtech.typesixbusinesslogic.service;
+package io.mipt.typesix.businesslogic.service;
 
+import io.mipt.typesix.businesslogic.domain.model.User;
+import io.mipt.typesix.businesslogic.domain.model.UserStatus;
+import io.mipt.typesix.businesslogic.service.impl.AuthenticationServiceImpl;
+import io.mipt.typesix.businesslogic.service.impl.repository.UserRepository;
+import io.mipt.typesix.businesslogic.service.core.AuthenticationException;
+import io.mipt.typesix.businesslogic.service.core.AuthenticationService;
+import io.mipt.typesix.businesslogic.service.core.RandomStringsGeneratorService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.shlimtech.typesixbusinesslogic.domain.model.User;
-import org.shlimtech.typesixbusinesslogic.domain.model.UserStatus;
-import org.shlimtech.typesixbusinesslogic.service.core.AuthenticationException;
-import org.shlimtech.typesixbusinesslogic.service.core.AuthenticationService;
-import org.shlimtech.typesixbusinesslogic.service.core.RandomStringsGeneratorService;
-import org.shlimtech.typesixbusinesslogic.service.impl.AuthenticationServiceImpl;
-import org.shlimtech.typesixbusinesslogic.service.impl.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;

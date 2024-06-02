@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.shlimtech.type-6.businessLogic</groupId>
+    <groupId>io.mipt.type-6.businessLogic</groupId>
     <artifactId>TypeSixBusinessLogic</artifactId>
     <version>${revision}</version>
 
