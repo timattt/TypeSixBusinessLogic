@@ -1,7 +1,6 @@
-package io.mipt.typesix.businesslogic.service;
+package io.mipt.typesix.businesslogic.service.core;
 
 import io.mipt.typesix.businesslogic.service.impl.RandomStringsGeneratorServiceImpl;
-import io.mipt.typesix.businesslogic.service.core.RandomStringsGeneratorService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

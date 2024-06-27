@@ -2,13 +2,13 @@ package io.mipt.typesix.businesslogic.service.impl;
 
 import io.mipt.typesix.businesslogic.domain.model.User;
 import io.mipt.typesix.businesslogic.domain.model.UserStatus;
-import io.mipt.typesix.businesslogic.service.impl.repository.UserRepository;
 import io.mipt.typesix.businesslogic.service.core.RandomStringsGeneratorService;
 import io.mipt.typesix.businesslogic.service.core.RegistrationException;
 import io.mipt.typesix.businesslogic.service.core.RegistrationService;
-import jakarta.transaction.Transactional;
+import io.mipt.typesix.businesslogic.service.core.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import java.util.function.BiConsumer;

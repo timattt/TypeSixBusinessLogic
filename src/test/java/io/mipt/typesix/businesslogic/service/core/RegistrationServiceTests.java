@@ -1,12 +1,9 @@
-package io.mipt.typesix.businesslogic.service;
+package io.mipt.typesix.businesslogic.service.core;
 
 import io.mipt.typesix.businesslogic.domain.model.User;
 import io.mipt.typesix.businesslogic.domain.model.UserStatus;
-import io.mipt.typesix.businesslogic.service.core.RandomStringsGeneratorService;
+import io.mipt.typesix.businesslogic.service.core.repository.UserRepository;
 import io.mipt.typesix.businesslogic.service.impl.RegistrationServiceImpl;
-import io.mipt.typesix.businesslogic.service.impl.repository.UserRepository;
-import io.mipt.typesix.businesslogic.service.core.RegistrationException;
-import io.mipt.typesix.businesslogic.service.core.RegistrationService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
