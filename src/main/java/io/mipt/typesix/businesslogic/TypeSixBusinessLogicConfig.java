@@ -10,6 +10,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @Configuration
 @ComponentScan
 @EnableJpaRepositories
-@PropertySource("classpath:db.properties")
+@PropertySource("classpath:db/db.properties")
 public class TypeSixBusinessLogicConfig {
 }
