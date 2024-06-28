@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - changeSet:
+      id: 1
+      author: timattt
+      changes:
+        - createTable:
+            tableName: type6user
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(50)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: login
+                  type: varchar(50)
+              - column:
+                  name: first_name
+                  type: varchar(50)
+              - column:
+                  name: last_name
+                  type: varchar(50)
+              - column:
+                  name: biography
+                  type: varchar(50)
+              - column:
+                  name: birthday
+                  type: date
+              - column:
+                  name: phone
+                  type: varchar(15)
+              - column:
+                  name: vk_link
+                  type: varchar(50)
+              - column:
+                  name: github_link
+                  type: varchar(50)
+              - column:
+                  name: code
+                  type: varchar(20)
+              - column:
+                  name: status
+                  type: smallint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(50)

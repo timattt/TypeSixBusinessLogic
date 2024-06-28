@@ -93,7 +93,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         process("login", user::setLogin, attributes);
         process("first_name", user::setFirstName, attributes);
         process("last_name", user::setLastName, attributes);
-        process("birthday", user::setBirthday, attributes);
     }
 
     private void analyzeGithub(User user, Map<String, Object> attributes) {

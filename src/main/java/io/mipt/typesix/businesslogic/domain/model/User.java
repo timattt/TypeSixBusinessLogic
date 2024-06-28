@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Data
@@ -37,7 +38,7 @@ public class User implements Serializable {
     private String biography;
 
     @Column(name = "birthday")
-    private String birthday;
+    private Date birthday;
 
     @Column(name = "phone")
     private String phone;
